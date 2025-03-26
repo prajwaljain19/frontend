@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
+import Loader from "./Loader";  
+import Button from "./Button";
 
 const ResponseModal = ({ response, onClose }) => {
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     document.body.style.overflow = "hidden";
 
-    // Set loading based on response availability
     setLoading(!response);
 
     return () => {
       document.body.style.overflow = "auto";
     };
   }, [response]);
+
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4">
@@ -26,9 +27,19 @@ const ResponseModal = ({ response, onClose }) => {
         >
           ✕
         </button>
+
+        {loading ? (
+          <div className="flex justify-center items-center h-60">
+            <Loader />
+          </div>
+        ) : (
           <div className="text-blue-700 whitespace-pre-line p-4 border rounded-lg bg-gray-100 max-h-[70vh] overflow-y-auto">
             {response}
           </div>
+        )}
+        <div className="flex justify-center mt-3">
+
+        </div>
       </div>
     </div>
   );
