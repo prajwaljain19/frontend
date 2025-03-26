@@ -14,8 +14,8 @@ const Chatbot = () => {
     height: "",
     weight: "",
     goal: "",
-    activitylevel: "",
-    diettype: "",
+    activity_level: "",
+    diet_type: "",
   });
 
   const [response, setResponse] = useState(null);
@@ -88,8 +88,8 @@ const Chatbot = () => {
 
           {[
             { name: "goal", options: ["Fat Loss", "Muscle Gain"] },
-            { name: "activity level", options: ["Sedentary", "Active"] },
-            { name: "diet type", options: ["Vegetarian", "Non-Vegetarian"] }
+            { name: "activity_level", options: ["Sedentary", "Active"] },
+            { name: "diet_type", options: ["Vegetarian", "Non-Vegetarian"] }
           ].map(({ name, options }) => (
             <div key={name} className="flex flex-col space-y-2">
               <label htmlFor={name} className="text-gray-700 capitalize">
