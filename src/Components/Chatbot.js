@@ -88,8 +88,8 @@ const Chatbot = () => {
 
           {[
             { name: "goal", options: ["Fat Loss", "Muscle Gain"] },
-            { name: "activitylevel", options: ["Sedentary", "Active"] },
-            { name: "diettype", options: ["Vegetarian", "Non-Vegetarian"] }
+            { name: "activity level", options: ["Sedentary", "Active"] },
+            { name: "diet type", options: ["Vegetarian", "Non-Vegetarian"] }
           ].map(({ name, options }) => (
             <div key={name} className="flex flex-col space-y-2">
               <label htmlFor={name} className="text-gray-700 capitalize">
